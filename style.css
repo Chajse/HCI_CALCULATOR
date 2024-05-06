@@ -1,0 +1,206 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box !important;
+  }
+  
+  
+  body {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    user-select: none;
+    position: relative;
+    background-color: #171717;
+  }
+  
+  
+  .lines {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    margin: auto;
+    width: 90vw;
+    z-index: -1;
+  }
+  
+  .line {
+    position: absolute;
+    width: 1px;
+    height: 100%;
+    top: 0;
+    left: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    overflow: hidden;
+  }
+  
+  .line::after {
+    content: '';
+    display: block;
+    position: absolute;
+    height: 15vh;
+    width: 100%;
+    top: -50%;
+    left: 0;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, #ffffff 75%, #ffffff 100%);
+    animation: drop 7s 0s infinite;
+    animation-fill-mode: forwards;
+    animation-timing-function: cubic-bezier(0.4, 0.26, 0, 0.97);
+  }
+  
+  .line:nth-child(1) {
+    margin-left: -25%;
+  }
+  
+  .line:nth-child(1)::after {
+    animation-delay: 2s;
+  }
+  
+  .line:nth-child(3) {
+    margin-left: 25%;
+  }
+  
+  .line:nth-child(3)::after {
+    animation-delay: 2.5s;
+  }
+  
+  
+  @keyframes drop {
+    0% {
+      top: -50%;
+    }
+    100% {
+      top: 110%;
+    }
+  }
+  
+  
+  .container {
+    margin-left: 1.8em;
+    padding: 20px;
+    border-radius: 25px;
+    background: hsl(0, 0%, 15%);
+  }
+  
+  
+  .content {
+    width: 100%;
+    margin-top: 1.7em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  
+  .row button {
+    width: 60px;
+    height: 60px;
+    font-size: 1.60rem;
+    font-weight: bold;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    outline: none;
+    margin: 5px;
+    transition: .1s;
+    background-color: hsl(0, 0%, 30%);
+    cursor: pointer;
+  }
+  
+  .row button:hover {
+    background-color: hsl(0, 0%, 40%);
+  }
+  
+  .row button:active {
+    background-color: hsl(0, 0%, 40%);
+  }
+  
+  
+  .display #screen {
+    margin-bottom: .5em;
+    width: auto;
+    height: 70px;
+    font-size: 2.129rem;
+    outline: none;
+    border: none;
+    text-align: right;
+    padding-right: .5em;
+    background: #ecf0f3;
+    border-radius: 6px;
+  }
+  
+  
+  #ce, #ac {
+    background: #d4d4d2;
+    color: hsl(0, 0%, 15%);
+    font-weight: 15;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.6rem;
+  }
+  
+  #ce:hover, #ac:hover {
+    background-color: hsl(0, 0%, 92%);
+  }
+  
+  #ce:active, #ac:active {
+    background-color: hsl(0, 0%, 100%);
+  }
+  
+  #eval, #division, #multiplication, #minus, #plus {
+    background: #FF9500;
+    color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+  }
+  
+  #eval:hover, #division:hover, #multiplication:hover, #minus:hover, #plus:hover {
+    background-color: hsl(35, 96%, 65%);
+  }
+  
+  #eval:active, #division:active, #multiplication:active, #minus:active, #plus:active {
+    background-color: hsl(35, 96%, 75%);
+  }
+  
+  /* Heading styles */
+  h2 {
+    font-size: 40px;
+    position: relative;
+    bottom: 0.5em;
+    margin-left: 1.2em;
+    font-family: sans-serif;
+    color: #fff;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 1px #d1d9e6,
+                 1px 1px 2px #d1d9e6,
+                 3px 3px 3px #d1d9e6,
+                 4px 4px 4px #d1d9e6,
+                 5px 5px 5px #d1d9e6,
+                 6px 6px 6px #d1d9e6,
+                 7px 7px 7px #d1d9e6,
+                 8px 8px 8px #d1d9e6;
+    letter-spacing: 6px;
+  }
+  
+  h2 span {
+    color: #33cc33;
+    font-size: 45px;
+    text-shadow: 1px 1px 1px #d1d9e6,
+                 1px 1px 2px #d1d9e6,
+                 3px 3px 3px #d1d9e6,
+                 4px 4px 4px #d1d9e6,
+                 5px 5px 5px #d1d9e6,
+                 6px 6px 6px #d1d9e6;
+  }
+  
+  h2 .fa {
+    position: absolute;
+    top: 1em;
+    color: #33ccff;
+  }
+  
